@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST" enctype="multipart/form-data" action="/upload">
+    <table>
+        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+        <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+    </table>
+</form>
+
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+    <h1>Student details</h1>
+    <ul>
+        <!--/*@thymesVar id="student" type="qwe.asd.zxc.domains.Student"*/-->
+        <li th:text="${student.getName()}"></li>
+        <li th:text="${student.getAge()}"></li>
+        <li th:text="${student.getInterest()}"></li>
+    </ul>
+</div>
+
+
+</body>
+</html>
